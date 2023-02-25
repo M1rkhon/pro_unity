@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pro_education/screens/home_page/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             prefixIcon: Icon(Icons.person),
-                            hintText: 'Username',
+                            hintText: 'Login email',
                           ),
                         ),
                       ),
@@ -75,7 +76,12 @@ class LoginPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(32.0)),
                           minimumSize: Size(330, 60), //////// HERE
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
                         child: Text('Войти'),
                       ),
                       SizedBox(
