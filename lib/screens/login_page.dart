@@ -54,10 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             suffixIcon: IconButton(
                               icon: Icon(
-                                Icons.remove_red_eye,
-                                color: this._showPassword
-                                    ? Colors.blue
-                                    : Colors.grey,
+                                this._showPassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
                               ),
                               onPressed: () {
                                 setState(() =>
