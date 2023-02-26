@@ -7,6 +7,8 @@ class CardScroll extends StatefulWidget {
   State<CardScroll> createState() => _CardScrollState();
 }
 
+List imgList = ['Flutter', 'React Native', 'Python', 'C#'];
+
 class _CardScrollState extends State<CardScroll> {
   final List imgUrl = ['login.png', 'splash_screen.png'];
   @override
@@ -20,13 +22,15 @@ class _CardScrollState extends State<CardScroll> {
       children: List.generate(11, (index) {
         return Center(
           child: Container(
-            width: 150,
-            height: 150,
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(image: AssetImage('images/$imgUrl'))),
-          ),
+              width: 165,
+              height: 175,
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                      image: AssetImage(
+                    "images/Flutter.png",
+                  )))),
         );
       }),
     ));

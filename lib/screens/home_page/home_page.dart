@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
             flexibleSpace: FlexibleSpaceBar(
               title: Text('Pro Unity IT School'),
               background: Image.asset(
-                'images/login.png',
+                'images/appbar.png',
                 fit: BoxFit.cover,
               ),
             ),
