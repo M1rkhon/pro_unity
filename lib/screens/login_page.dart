@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pro_education/screens/home_page/home_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +44,25 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 30, right: 30, top: 25),
                         child: TextField(
-                          obscureText: true,
+                          obscureText: !this._showPassword,
                           autocorrect: false,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             prefixIcon: Icon(
                               Icons.lock,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                Icons.remove_red_eye,
+                                color: this._showPassword
+                                    ? Colors.blue
+                                    : Colors.grey,
+                              ),
+                              onPressed: () {
+                                setState(() =>
+                                    this._showPassword = !this._showPassword);
+                              },
                             ),
                             hintText: 'Passoword',
                           ),
