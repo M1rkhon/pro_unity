@@ -14,25 +14,32 @@ class _CardScrollState extends State<CardScroll> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: GridView.count(
-      // Create a grid with 2 columns. If you change the scrollDirection to
-      // horizontal, this produces 2 rows.
-      crossAxisCount: 2,
-      // Generate 100 widgets that display their index in the List.
-      children: List.generate(11, (index) {
-        return Center(
-          child: Container(
-              width: 165,
-              height: 175,
-              decoration: BoxDecoration(
+      child: GridView.count(
+        // Create a grid with 2 columns. If you change the scrollDirection to
+        // horizontal, this produces 2 rows.
+        crossAxisCount: 2,
+        // Generate 100 widgets that display their index in the List.
+        children: List.generate(
+          11,
+          (index) {
+            return Center(
+              child: Container(
+                width: 165,
+                height: 175,
+                decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                      image: AssetImage(
-                    "images/Flutter.png",
-                  )))),
-        );
-      }),
-    ));
+                    image: AssetImage(
+                      "images/Flutter.png",
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
